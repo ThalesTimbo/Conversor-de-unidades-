@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+        <div class="header">
+            <h1 class="title">Conversor de Unidades</h1>
+        </div>
+
+        <div class="converters-grid">
+            <!-- Distance Converter -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    </svg>
+                    <h3 class="card-title">Distância</h3>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Valor</label>
+                    <input type="number" class="input-field" id="distanceInput" placeholder="Digite o valor">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Conversão</label>
+                    <select class="select-field" id="distanceType">
+                        <option value="km-to-miles">Quilômetros → Milhas</option>
+                        <option value="miles-to-km">Milhas → Quilômetros</option>
+                        <option value="m-to-ft">Metros → Pés</option>
+                        <option value="ft-to-m">Pés → Metros</option>
+                    </select>
+                </div>
+                
+                <button class="convert-btn" onclick="convertDistance()">Converter</button>
+                <div class="result" id="distanceResult"></div>
+                <button class="reset-btn" onclick="resetDistance()">
+                    🔄 Limpar
+                </button>
+            </div>
+
+            <!-- Temperature Converter -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12 2c1.1 0 2 .9 2 2v6.17c1.24.6 2 1.84 2 3.33 0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.49.76-2.73 2-3.33V4c0-1.1.9-2 2-2z"/>
+                    </svg>
+                    <h3 class="card-title">Temperatura</h3>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Valor</label>
+                    <input type="number" class="input-field" id="tempInput" placeholder="Digite a temperatura">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Conversão</label>
+                    <select class="select-field" id="tempType">
+                        <option value="c-to-f">Celsius → Fahrenheit</option>
+                        <option value="f-to-c">Fahrenheit → Celsius</option>
+                    </select>
+                </div>
+                
+                <button class="convert-btn" onclick="convertTemperature()">Converter</button>
+                <div class="result" id="tempResult"></div>
+                <button class="reset-btn" onclick="resetTemperature()">
+                    🔄 Limpar
+                </button>
+            </div>
+
+            <!-- Weight Converter -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12 3c-1.1 0-2 .9-2 2v1H8c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-2V5c0-1.1-.9-2-2-2zm0 2v1h0V5zm-2 5h4v2h-4V10zm0 4h4v2h-4v-2z"/>
+                    </svg>
+                    <h3 class="card-title">Peso</h3>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Valor</label>
+                    <input type="number" class="input-field" id="weightInput" placeholder="Digite o peso">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Conversão</label>
+                    <select class="select-field" id="weightType">
+                        <option value="kg-to-lb">Quilogramas → Libras</option>
+                        <option value="lb-to-kg">Libras → Quilogramas</option>
+                    </select>
+                </div>
+                
+                <button class="convert-btn" onclick="convertWeight()">Converter</button>
+                <div class="result" id="weightResult"></div>
+                <button class="reset-btn" onclick="resetWeight()">
+                    🔄 Limpar
+                </button>
+            </div>
+
+            <!-- Volume Converter -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Volume</h3>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Valor</label>
+                    <input type="number" class="input-field" id="volumeInput" placeholder="Digite o volume">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Conversão</label>
+                    <select class="select-field" id="volumeType">
+                        <option value="l-to-gal">Litros → Galões</option>
+                        <option value="gal-to-l">Galões → Litros</option>
+                    </select>
+                </div>
+                
+                <button class="convert-btn" onclick="convertVolume()">Converter</button>
+                <div class="result" id="volumeResult"></div>
+                <button class="reset-btn" onclick="resetVolume()">
+                    🔄 Limpar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
